@@ -3,11 +3,7 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 20px;
-<<<<<<< HEAD:quests/quest_4/quest4.css
   background: url("/images/background4.webp") no-repeat center center
-=======
-  background: url("/public/images/background4.webp") no-repeat center center
->>>>>>> 097dcc20a6a9693e6426404f8fbf5d2583c605b3:Quest-4/styles.css
     fixed;
   background-size: cover;
   color: white;

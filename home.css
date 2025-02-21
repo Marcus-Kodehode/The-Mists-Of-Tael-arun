@@ -1,65 +1,9 @@
 /* === Bakgrunn for startsiden === */
 body {
-<<<<<<< HEAD
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-    background: url("/images/backgroundmain.webp") no-repeat center center
-      fixed;
-    background-size: cover;
-    color: white;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-  }
-  
-  /* === Hovedboks med introduksjon === */
-  #mainBox {
-    background: rgba(0, 0, 0, 0.85);
-    padding: 30px;
-    border-radius: 10px;
-    width: 60%;
-    margin: 150px auto;
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
-  }
-  
-  #mainBox h1 {
-    color: #ffcc00;
-    font-size: 36px;
-  }
-  
-  #mainBox p {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  /* === Start eventyr-knapp === */
-  #mainBox button {
-    margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #444;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    font-weight: bold;
-  }
-  
-  #mainBox button:hover {
-    background-color: #666;
-    transform: scale(1.05);
-  }
-  
-  #mainBox button:active {
-    transform: scale(1);
-  }
-=======
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 20px;
-  background: url("/public/images/backgroundmain.webp") no-repeat center center
+  background: url("/images/backgroundmain.webp") no-repeat center center
     fixed;
   background-size: cover;
   color: white;
@@ -110,4 +54,3 @@ body {
 #mainBox button:active {
   transform: scale(1);
 }
->>>>>>> 097dcc20a6a9693e6426404f8fbf5d2583c605b3

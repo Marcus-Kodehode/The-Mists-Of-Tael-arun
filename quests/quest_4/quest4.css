@@ -1,0 +1,89 @@
+/* === Generell styling === */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+<<<<<<< HEAD:quests/quest_4/quest4.css
+  background: url("/images/background4.webp") no-repeat center center
+=======
+  background: url("/public/images/background4.webp") no-repeat center center
+>>>>>>> 097dcc20a6a9693e6426404f8fbf5d2583c605b3:Quest-4/styles.css
+    fixed;
+  background-size: cover;
+  color: white;
+}
+
+/* === Introduksjonsboks === */
+#introBox {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
+}
+
+/* === Oppdragsboks og Eventboks === */
+#questBox,
+#eventBox {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  padding: 25px;
+  border-radius: 10px;
+  width: 450px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+#eventBox.hidden {
+  display: none;
+}
+
+#questBox h2,
+#eventBox h2 {
+  color: #ffcc00;
+}
+
+#questBox button,
+#eventBox button {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 14px;
+  background: #444;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+#questBox button:hover,
+#eventBox button:hover {
+  background: #666;
+}
+
+/* === Restart-knapp === */
+#restartGameBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background: #444;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#restartGameBtn:hover {
+  background-color: #666;
+}

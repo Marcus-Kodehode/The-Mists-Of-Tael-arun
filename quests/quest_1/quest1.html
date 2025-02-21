@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quest 1 - The Call for a Hero</title>
+
+    <!-- Koble til felles styles -->
+<<<<<<< HEAD:quests/quest_1/quest1.html
+    <link rel="stylesheet" href="../../shared.css" />
+    <link rel="stylesheet" href="./quest1.css" />
+=======
+    <link rel="stylesheet" href="../Shared/shared.css" />
+    <link rel="stylesheet" href="styles.css" />
+>>>>>>> 097dcc20a6a9693e6426404f8fbf5d2583c605b3:Quest-1/quest1.html
+  </head>
+  <body>
+    <!-- Last inn felles UI (inventory, lokasjoner, health/stamina) -->
+    <div id="sharedElements"></div>
+
+    <!-- Introduksjonstekst -->
+    <div id="introBox">
+      <h2>The Village in the Mist</h2>
+      <p>
+        Den engang stolte landsbyen Tael’arun ligger nå i ruiner, skjult bak en
+        ugjennomtrengelig tåke.
+      </p>
+      <p>
+        Som den eneste overlevende må du forberede deg på en lang reise for å
+        avdekke sannheten bak denne katastrofen.
+      </p>
+    </div>
+
+    <!-- Quest 1 Tekstboks -->
+    <div id="questBox">
+      <h2>The Call for a Hero</h2>
+      <p><strong>Hva vil du gjøre?</strong></p>
+      <button onclick="chooseOption('prepare')">
+        ⚔️ Gjør deg klar for reisen
+      </button>
+      <button onclick="chooseOption('wait')">⏳ Vente og håpe på hjelp</button>
+    </div>
+
+    <!-- ⭐ Resultatboks (nytt) -->
+    <div id="resultBox" class="hidden">
+      <h2 id="resultTitle">✨ Resultat ✨</h2>
+      <p id="resultDescription"></p>
+      <button id="continueButton" onclick="goToNextQuest()">✅ Fortsett</button>
+    </div>
+
+<<<<<<< HEAD:quests/quest_1/quest1.html
+    <script src="../../shared.js"></script>
+    <script src="./quest1.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+    <script src="../Shared/shared.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
+>>>>>>> 097dcc20a6a9693e6426404f8fbf5d2583c605b3:Quest-1/quest1.html

@@ -1,0 +1,261 @@
+/* ==============================
+   === Inventory-knapp ===
+   - Viser en rund knapp (øverst til høyre)
+   - Ikonet skal fylle knappen helt
+   ============================== */
+   #inventoryButton {
+    position: fixed; /* Alltid i samme posisjon på skjermen */
+    top: 20px; /* Avstand fra topp (20px) */
+    right: 20px; /* Avstand fra høyre (20px) */
+    background: black; /* Bakgrunnsfarge på selve knappen */
+    padding: 0; /* Ingen ekstra padding i knappen */
+    border: none; /* Ingen standard kant/border */
+    border-radius: 50%; /* Gjør knappen rund */
+    cursor: pointer; /* Viser pekeren/hånd når man holder over */
+    width: 60px; /* Knappens bredde */
+    height: 60px; /* Knappens høyde */
+    display: flex; /* Bruker flex for enkel sentrering av innhold */
+    align-items: center; /* Vertikal sentrering av innhold */
+    justify-content: center; /* Horisontal sentrering av innhold */
+    overflow: hidden; /* Skjuler alt som stikker utenfor knappen */
+  }
+  
+  #inventoryButton img {
+    width: 100%; /* Bilde skal fylle hele knappen */
+    height: 100%; /* … og fullt ut i høyden */
+    object-fit: cover; /* Skalerer bildet slik at det dekker hele flaten */
+    border-radius: 50%; /* Gir bildet rund form (matcher knappen) */
+    background: black; /* Bakgrunn for selve bildet, om noe ikke dekkes */
+  }
+  
+  /* ==============================
+     === Inventory-popup ===
+     - Vises når brukeren trykker på knappen
+     - Viser spillerens gjenstander
+     ============================== */
+  #inventoryContainer {
+    position: fixed; /* Fast posisjon på skjermen */
+    top: 80px; /* Litt under inventory-knappen */
+    right: 20px; /* Boksens avstand fra høyre */
+    width: 250px; /* Fast bredde på boksen */
+    background: rgba(0, 0, 0, 0.9); /* Halvgjennomsiktig mørk bakgrunn */
+    border-radius: 10px; /* Runde hjørner på boksen */
+    padding: 15px; /* Luft inni boksen */
+    border: 1px solid white; /* Hvit kant rundt boksen */
+    text-align: center; /* Sentrerer tekst og knapper */
+    display: none; /* Skjult som standard */
+  }
+  
+  /* Inventory vises når klassen “visible” er lagt til i JS-koden */
+  #inventoryContainer.visible {
+    display: block; /* Viser boksen */
+  }
+  
+  #inventoryContainer h2 {
+    font-size: 16px; /* Tittelstørrelse */
+    margin-bottom: 10px; /* Litt rom under tittelen */
+  }
+  
+  #inventory {
+    font-size: 14px; /* Tekststørrelsen for listen av items */
+    color: white; /* Gjør item-teksten hvit */
+  }
+  
+  /* ==============================
+     === Lokasjonsliste (venstre side) ===
+     - Viser klikkbare knapper med lokasjonsnavn/bilder
+     ============================== */
+  #locationContainer {
+    position: fixed; /* Fast posisjon på skjermen */
+    top: 20px; /* 20px ned fra toppen */
+    left: 20px; /* 20px fra venstre kant */
+    background: rgba(0, 0, 0, 0.7); /* Mørk, gjennomsiktig bakgrunn */
+    padding: 15px; /* Luft inni boksen */
+    border-radius: 10px; /* Runde hjørner */
+    width: 200px; /* Boksens bredde */
+    opacity: 80%;
+  }
+  
+  #locationContainer h3 {
+    text-align: center; /* Sentrerer overskriften */
+    font-size: 18px; /* Tekststørrelse */
+    font-weight: bold; /* Fet skrift */
+    color: white; /* Hvit farge på teksten */
+    margin-bottom: 10px; /* Litt plass under overskriften */
+  }
+  
+  /* Fjerner standard prikk-kuler i en ul/ol-liste */
+  #locationList {
+    list-style-type: none; /* Ingen punkt-liste */
+    padding: 0; /* Fjerner standard padding på liste */
+    margin: 0; /* Og margin */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Hovedstil for lokasjonsknapper i liste */
+  #locationList li {
+    width: 200px; /* Samme bredde som boksens innside */
+    height: 60px; /* Høyde på hver knapp */
+    background-size: cover; /* Bildet dekker hele flaten */
+    background-position: center; /* Sentrerer bildet */
+    text-align: center; /* Tekst i midten */
+    border-radius: 10px; /* Runde hjørner */
+    cursor: pointer; /* “Klikkbar” markør */
+    transition: 0.3s; /* Glidende effekt ved hover */
+    font-weight: bold; /* Fet tekst */
+    color: white; /* Hvit tekst */
+    border: 2px solid white; /* Hvit kantlinje */
+    display: flex; /* For enklere sentrering av tekst */
+    align-items: center; /* Vertikal sentrering */
+    justify-content: center; /* Horisontal sentrering */
+    font-size: 16px; /* Skalerer teksten */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Litt skygge for lesbarhet */
+  }
+  
+  /* === Hver lokasjon sin bakgrunn === */
+  #whisperingForest {
+    background-image: url("/images/background-whisperingforest.webp");
+  }
+  
+  #echoingCaves {
+    background-image: url("/images/background-echoingcaves.webp");
+  }
+  
+  #shimmeringRiverside {
+    background-image: url("/images/background-shimmeringriverside.webp");
+  }
+  
+  #crumblingTower {
+    background-image: url("/images/backgroundmain.webp");
+  }
+  
+  /* Hover-effekt: Liten skalering og bytte av kantfarge */
+  #locationList li:hover {
+    transform: scale(1.05); /* Liten zoom */
+    border-color: yellow; /* Gule kanter på hover */
+  }
+  
+  /*
+  #locationList li:hover {
+      background: rgba(255, 255, 255, 0.6);
+      color: black;
+      border-color: black;
+  }
+  */
+  
+  /* Ved aktivt klikk -> lysere bakgrunn */
+  #locationList li:active {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* ==============================
+     === Health & Stamina Bars ===
+     - Viser to “piller” (bars) på høyre side
+     ============================== */
+  #statusContainer {
+    position: fixed; /* Fast posisjon */
+    top: 20px; /* 20px fra toppen */
+    right: 150px; /* 150px fra høyre (for å ikke overlappe inventory-knappen) */
+    display: flex; /* Plasserer barene i en kolonne */
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px; /* Litt plass mellom hver bar */
+  }
+  
+  /* En enkelt bar med ikon, progress-bar og tall */
+  .status-bar {
+    display: flex; /* Legger elementene side-om-side */
+    align-items: center; /* Vertikal sentrering */
+    background: black; /* Svart bakgrunn for baren */
+    padding: 5px; /* Litt luft inni */
+    border-radius: 50px; /* “Pille”-form */
+    width: 140px; /* Fast bredde på baren */
+    height: 40px; /* Fast høyde på baren */
+    justify-content: space-between; /* Avstand mellom ikon og bar */
+  }
+  
+  /* === Ikoner for helse/stamina (hjerte/lyn) === */
+  .status-bar img {
+    width: 30px; /* Ikon-bredde */
+    height: 30px; /* Ikon-høyde */
+    background: black; /* Matcher bakgrunnen */
+    border-radius: 50%; /* Gjør ikonets bakgrunn rund */
+    object-fit: contain; /* Passer bildet uten å strekke */
+  }
+  
+  /* === Progress bars for Health & Stamina === */
+  .status-bar progress {
+    width: 85px; /* Lengde på selve baren */
+    height: 12px; /* Tykkelse på baren */
+    border-radius: 5px; /* Runder hjørnene litt */
+    appearance: none; /* Fjerner standard utseende i f.eks. Chrome */
+  }
+  
+  /* Bakgrunn for selve progress-baren */
+  progress::-webkit-progress-bar {
+    background: #444; /* Mørk grå */
+    border-radius: 5px; /* Litt avrundet */
+  }
+  
+  /* Fyll-fargen (Health) */
+  progress::-webkit-progress-value {
+    background: green; /* Grønn for Health */
+    border-radius: 5px;
+  }
+  
+  /* Egen farge for stamina-progresjon */
+  #staminaBar::-webkit-progress-value {
+    background: orange; /* Oransje for Stamina */
+  }
+  /* ============================== */
+  /* === Restart Game-knapp === */
+  /* ============================== */
+  
+  #restartButton {
+    position: absolute;
+    bottom: 125px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #444;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* ✅ Sørger for at knappen alltid er synlig foran tekstboksene */
+    border-radius: 50px;
+  }
+  
+  #restartButton:hover {
+    background: #666;
+    transform: translateX(-50%) scale(1.05);
+  }
+  
+  #restartButton:active {
+    background: #888;
+    transform: translateX(-50%) scale(0.98);
+  }
+  /* @font-face {
+      font-family: 'Colfax';
+      src: url('../Images/type-font/Colfax-Medium.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+  
+  body {
+      font-family: 'Colfax', sans-serif;
+  } */
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quest 2 - The Sorcerer's Forgotten Secret</title>
+
+    <!-- Felles styles og quest-spesifikk CSS -->
+<<<<<<< HEAD:quests/quest_2/quest2.html
+    <link rel="stylesheet" href="../../shared.css" />
+    <link rel="stylesheet" href="./quest2.css" />
+=======
+    <link rel="stylesheet" href="/Shared/shared.css" />
+    <link rel="stylesheet" href="./styles.css" />
+>>>>>>> 097dcc20a6a9693e6426404f8fbf5d2583c605b3:Quest-2/quest2.html
+  </head>
+  <body>
+    <!-- Inventory, health/stamina -->
+    <div id="sharedElements"></div>
+
+    <!-- Introduksjonsboks -->
+    <div id="introBox">
+      <h2>Welcome to the Sorcerer’s Tower</h2>
+      <p>
+        Trollmannen Eldrin ser på deg med et bekymret blikk. "<i
+          >Jeg la den boken et sted... men hvor?</i
+        >" sier han, mens han febrilsk blar gjennom gamle pergamenter. "Var det
+        i <strong>Echoing Caves</strong>, eller dypt inne i
+        <strong>Whispering Forest</strong>? Du må finne den for meg!"
+      </p>
+    </div>
+
+    <!-- Questboks med valg -->
+    <div id="questBox">
+      <h2>The Sorcerer's Forgotten Secret</h2>
+      <p><strong>Hva vil du gjøre?</strong></p>
+      <button onclick="chooseOption('caves')">
+        🕳️ Dra til Echoing Caves (Risiko: Mulig fare!)
+      </button>
+      <button onclick="chooseOption('forest')">
+        🌲 Dra til Whispering Forest (Trygg vei)
+      </button>
+    </div>
+
+    <!-- Resultatboks (Skjult til nødvendig) -->
+    <div id="resultBox" class="hidden">
+      <h2 id="resultTitle">✨ Resultat ✨</h2>
+      <p id="resultDescription"></p>
+      <button id="continueButton" onclick="goToNextQuest()">✅ Fortsett</button>
+    </div>
+
+<<<<<<< HEAD:quests/quest_2/quest2.html
+    <script src="../../shared.js"></script>
+    <script src="./quest2.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+    <script src="/Shared/shared.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
+>>>>>>> 097dcc20a6a9693e6426404f8fbf5d2583c605b3:Quest-2/quest2.html
